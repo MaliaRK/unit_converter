@@ -1,0 +1,59 @@
+# import streamlit as st
+
+# st.set_page_config(page_title="Unit Converter", page_icon="⏳", layout="centered")
+# st.header("Convert Units")
+
+# length = {
+#     'kilometer': 1,       # base unit
+#     'meter': 100,
+#     'decimeter': 10000,
+#     'centimeter': 100000,
+# }
+
+# category = st.selectbox('Select Category', ['Length', 'Mass', 'Temperature'])     # cursor pointer
+
+
+# col1, col2, col3 = st.columns([4, 1, 4], vertical_alignment='center', border=True)
+
+# with col1:
+#     with st.container():
+#         unit = st.number_input(label='From: ', min_value=0.0, format='%.2f')
+#         from_unit = st.selectbox('', list(length.keys()), key='from')
+
+# with col2:
+#          st.markdown("""
+#         <div style="
+#             display: flex;
+#             justify-content: center;
+#             align-items: center;
+#             height: 50px; 
+#             width: 100%;
+#             font-size: 24px;
+#             font-weight: bold;
+#         ">
+#             =
+#         </div>
+#     """, unsafe_allow_html=True)
+
+# with col3:
+#     with st.container():
+#         unit = st.number_input(label='To: ', min_value=0.0, format='%.2f')
+#         to_unit = st.selectbox('', list(length.keys()), key='to')
+
+
+# if from_unit in length and to_unit in length:
+#     base_unit = unit / length[from_unit]
+#     converted_unit = base_unit * length[to_unit]
+#     st.write(f"Converted value: {unit} {from_unit} = {converted_unit:.2f} {to_unit}")
+
+
+
+# Define conversion function
+# def convert_units(direction):
+#     if st.session_state.from_unit in length and st.session_state.to_unit in length:
+#         if direction == "from_to":
+#             base_unit = st.session_state.from_value / length[st.session_state.from_unit]
+#             st.session_state.to_value = base_unit * length[st.session_state.to_unit]
+#         elif direction == "to_from":
+#             base_unit = st.session_state.to_value / length[st.session_state.to_unit]
+#             st.session_state.from_value = base_unit * length[st.session_state.from_unit]
