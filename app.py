@@ -3,6 +3,8 @@ import streamlit as st
 st.set_page_config(page_title="Unit Converter", page_icon="⏳", layout="centered")
 st.header("Convert Units")
 
+category = st.selectbox('Select Category', ['Length', 'Mass', 'Temperature'])
+
 length = {
     'kilometer': 1,  # base unit
     'meter': 1000,
